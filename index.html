@@ -4,133 +4,1117 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#075e54">
-<title>ዲጂታል ገደብ ወረዳና ከተማ</title>
+<meta name="theme-color" content="#064e45">
+<meta name="description" content="DIGITAL GEDEB WOREDA AND TOWN - የገደብ ወረዳና ከተማ ዲጂታል አገልግሎት መድረክ">
+<title>DGWT | Digital Gedeb Woreda and Town</title>
+
 <style>
+:root{
+  --green:#075e54;
+  --dark:#063e38;
+  --light:#eaf5f1;
+  --gold:#e9bd54;
+  --white:#fff;
+  --text:#203a34;
+  --muted:#71817c;
+  --border:#e1ebe7;
+  --shadow:0 8px 28px rgba(0,45,35,.08);
+}
+
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,"Noto Sans Ethiopic",sans-serif;background:#f2f6f5;color:#19332e}
-header{background:#075e54;color:white;padding:22px 16px;text-align:center}
-.logo{font-size:34px;font-weight:bold;color:#f4c75e}
-header h1{font-size:23px;margin:8px 0}
-header p{margin:5px;font-size:14px}
-nav{background:#064b44;padding:12px;display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
-nav a{color:white;text-decoration:none;font-size:14px}
-.hero{padding:35px 18px;text-align:center;background:linear-gradient(135deg,#087c6d,#064b44);color:white}
-.hero h2{font-size:25px;margin:0 0 12px}
-.hero p{line-height:1.8;max-width:650px;margin:auto}
-.container{max-width:1100px;margin:auto;padding:22px 15px}
-.section-title{text-align:center;color:#075e54;margin:15px 0 22px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:13px}
-.service{background:white;padding:20px 12px;border-radius:13px;text-align:center;box-shadow:0 3px 12px #0000000c;border:1px solid #e2ece9}
-.service .icon{font-size:30px}
-.service h3{font-size:15px;margin:10px 0 5px}
-.service p{font-size:12px;color:#687b76;line-height:1.6}
-.card{background:white;padding:20px;border-radius:14px;margin-top:20px;box-shadow:0 3px 12px #0000000c}
-label{display:block;margin:12px 0 6px;font-weight:bold;font-size:14px}
-input,select,textarea{width:100%;padding:12px;border:1px solid #cbd9d5;border-radius:8px;font-size:15px;background:#fff}
-textarea{min-height:100px}
-button{background:#087c6d;color:white;border:0;padding:13px 20px;border-radius:8px;font-size:15px;font-weight:bold;margin-top:15px;width:100%}
-.notice{background:#fff8e5;padding:13px;border-left:4px solid #e6b84d;border-radius:6px;font-size:13px;line-height:1.7}
-footer{background:#064b44;color:white;text-align:center;padding:22px;font-size:13px;line-height:1.8}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family:Arial,"Noto Sans Ethiopic",sans-serif;
+  background:#f4f8f6;
+  color:var(--text);
+  line-height:1.7;
+}
+
+a{color:inherit}
+
+button,input,select,textarea{font:inherit}
+
+button{cursor:pointer}
+
+:focus-visible{
+  outline:3px solid var(--gold);
+  outline-offset:3px;
+}
+
+.container{
+  max-width:1180px;
+  margin:auto;
+  padding:0 18px;
+}
+
+/* HEADER */
+
+header{
+  background:linear-gradient(120deg,#063e38,#087c6d);
+  color:white;
+  padding:25px 15px 30px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+header:before{
+  content:"";
+  position:absolute;
+  width:260px;
+  height:260px;
+  border:1px solid #ffffff20;
+  border-radius:50%;
+  top:-150px;
+  right:-70px;
+}
+
+header:after{
+  content:"";
+  position:absolute;
+  width:200px;
+  height:200px;
+  border:1px solid #ffffff20;
+  border-radius:50%;
+  bottom:-150px;
+  left:-60px;
+}
+
+.brand{
+  position:relative;
+  z-index:1;
+}
+
+.logo{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  width:76px;
+  height:76px;
+  border:2px solid var(--gold);
+  border-radius:20px;
+  color:var(--gold);
+  font-size:28px;
+  font-weight:900;
+  letter-spacing:1px;
+  margin-bottom:8px;
+  background:#ffffff10;
+}
+
+header h1{
+  font-size:clamp(21px,4vw,32px);
+  margin:5px 0;
+}
+
+.english-title{
+  font-size:15px;
+  letter-spacing:1.5px;
+  font-weight:bold;
+  color:#f5d77e;
+}
+
+.tagline{
+  font-size:13px;
+  margin:9px 0 0;
+  color:#e6f5ef;
+}
+
+/* NAVIGATION */
+
+nav{
+  background:var(--dark);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+  padding:12px;
+  flex-wrap:wrap;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 3px 12px #00000015;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  padding:9px 14px;
+  border-radius:7px;
+  font-size:13px;
+  transition:.2s;
+}
+
+nav a:hover{
+  background:#ffffff20;
+  color:var(--gold);
+}
+
+/* HERO */
+
+.hero{
+  background:
+  radial-gradient(circle at 85% 20%,#ffffff18 0 90px,transparent 91px),
+  linear-gradient(130deg,#087c6d,#06463e);
+  color:white;
+  padding:65px 18px;
+  text-align:center;
+}
+
+.hero-content{
+  max-width:780px;
+  margin:auto;
+}
+
+.hero h2{
+  font-size:clamp(25px,5vw,39px);
+  line-height:1.4;
+  margin:0 0 15px;
+}
+
+.hero p{
+  font-size:15px;
+  line-height:2;
+  color:#e7f5f0;
+}
+
+.hero-buttons{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:25px;
+}
+
+.btn{
+  display:inline-block;
+  text-decoration:none;
+  padding:12px 22px;
+  border-radius:9px;
+  font-weight:bold;
+  font-size:14px;
+  border:1px solid transparent;
+  transition:.2s;
+}
+
+.btn-primary{
+  background:var(--gold);
+  color:#24372f;
+}
+
+.btn-primary:hover{background:#f7d779}
+
+.btn-outline{
+  border-color:#ffffff90;
+  color:white;
+}
+
+.btn-outline:hover{background:#ffffff20}
+
+/* QUICK INFORMATION */
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:15px;
+  margin-top:-25px;
+  position:relative;
+}
+
+.stat{
+  background:white;
+  padding:20px;
+  text-align:center;
+  border-radius:13px;
+  box-shadow:var(--shadow);
+  border:1px solid var(--border);
+}
+
+.stat strong{
+  display:block;
+  color:var(--green);
+  font-size:25px;
+}
+
+.stat span{
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* SECTIONS */
+
+.section{
+  padding:45px 0;
+}
+
+.section-heading{
+  text-align:center;
+  margin-bottom:28px;
+}
+
+.section-heading h2{
+  color:var(--green);
+  font-size:25px;
+  margin:0 0 8px;
+}
+
+.section-heading p{
+  color:var(--muted);
+  font-size:14px;
+  margin:0;
+}
+
+.section-line{
+  width:65px;
+  height:4px;
+  border-radius:5px;
+  background:var(--gold);
+  margin:12px auto;
+}
+
+/* SEARCH */
+
+.search-box{
+  max-width:550px;
+  margin:0 auto 25px;
+  position:relative;
+}
+
+.search-box input{
+  width:100%;
+  padding:15px 18px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:white;
+  box-shadow:var(--shadow);
+  font-size:15px;
+}
+
+/* SERVICE CARDS */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:17px;
+}
+
+.service{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:20px;
+  box-shadow:0 3px 12px #00000008;
+  transition:transform .2s,box-shadow .2s;
+}
+
+.service:hover{
+  transform:translateY(-5px);
+  box-shadow:var(--shadow);
+}
+
+.service-icon{
+  width:55px;
+  height:55px;
+  border-radius:14px;
+  background:var(--light);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:29px;
+  margin-bottom:12px;
+}
+
+.service h3{
+  color:var(--green);
+  font-size:16px;
+  margin:7px 0;
+}
+
+.service p{
+  color:var(--muted);
+  font-size:13px;
+  margin:0 0 12px;
+}
+
+.service details{
+  border-top:1px solid var(--border);
+  padding-top:10px;
+  font-size:13px;
+}
+
+.service summary{
+  color:var(--green);
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.service details ul{
+  padding-left:20px;
+  color:#596c65;
+}
+
+.empty-message{
+  display:none;
+  text-align:center;
+  color:var(--muted);
+  padding:25px;
+  background:white;
+  border-radius:12px;
+}
+
+/* HOW IT WORKS */
+
+.steps{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:17px;
+}
+
+.step{
+  padding:22px;
+  background:white;
+  border-radius:13px;
+  border:1px solid var(--border);
+  text-align:center;
+}
+
+.step-number{
+  width:43px;
+  height:43px;
+  background:var(--green);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  font-size:19px;
+  font-weight:bold;
+  margin:0 auto 12px;
+}
+
+.step h3{
+  color:var(--green);
+  font-size:16px;
+}
+
+/* CARDS AND FORMS */
+
+.card{
+  background:white;
+  border-radius:15px;
+  padding:25px;
+  box-shadow:var(--shadow);
+  border:1px solid var(--border);
+}
+
+.notice{
+  background:#fff8e5;
+  border-left:4px solid var(--gold);
+  padding:14px;
+  border-radius:8px;
+  color:#665326;
+  font-size:13px;
+  line-height:1.8;
+  margin-bottom:18px;
+}
+
+label{
+  display:block;
+  margin:14px 0 6px;
+  font-weight:bold;
+  font-size:14px;
+}
+
+input,select,textarea{
+  width:100%;
+  padding:13px;
+  border:1px solid #cadbd4;
+  border-radius:9px;
+  background:white;
+  color:var(--text);
+}
+
+textarea{
+  min-height:120px;
+  resize:vertical;
+}
+
+input:focus,select:focus,textarea:focus{
+  border-color:var(--green);
+  outline:2px solid #087c6d20;
+}
+
+.submit-btn{
+  background:var(--green);
+  color:white;
+  border:0;
+  border-radius:9px;
+  padding:14px;
+  font-weight:bold;
+  width:100%;
+  margin-top:18px;
+}
+
+.submit-btn:hover{background:var(--dark)}
+
+#message{
+  font-size:14px;
+  margin-top:15px;
+  line-height:1.8;
+}
+
+.message-success{
+  background:#e9f7ef;
+  color:#17623d;
+  padding:12px;
+  border-radius:8px;
+}
+
+/* ABOUT */
+
+.about-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:18px;
+}
+
+.about-item{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:13px;
+  padding:22px;
+}
+
+.about-item .icon{
+  font-size:30px;
+}
+
+.about-item h3{
+  color:var(--green);
+  font-size:16px;
+}
+
+/* FOOTER */
+
+footer{
+  background:var(--dark);
+  color:white;
+  text-align:center;
+  padding:35px 18px;
+  margin-top:35px;
+}
+
+.footer-logo{
+  font-size:28px;
+  color:var(--gold);
+  font-weight:900;
+}
+
+footer p{
+  font-size:13px;
+  color:#d6e9e2;
+}
+
+.footer-bottom{
+  border-top:1px solid #ffffff25;
+  margin-top:20px;
+  padding-top:15px;
+  font-size:12px;
+  color:#c5d9d2;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:600px){
+  header{padding:22px 12px}
+  nav{gap:3px;padding:9px 5px}
+  nav a{padding:8px;font-size:12px}
+  .hero{padding:48px 16px}
+  .section{padding:35px 0}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .service{padding:14px}
+  .service h3{font-size:14px}
+  .service p{font-size:12px}
+  .card{padding:17px}
+}
+
+@media(max-width:360px){
+  .grid{grid-template-columns:1fr}
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*:before,*:after{
+    animation:none!important;
+    transition:none!important;
+  }
+}
 </style>
 </head>
+
 <body>
 
+<a href="#home" style="position:absolute;left:-9999px">
+ወደ መነሻ ይሂዱ
+</a>
+
+<!-- HEADER -->
+
 <header>
-<div class="logo">DGWT</div>
-<h1>ዲጂታል ገደብ ወረዳና ከተማ</h1>
-<p>DIGITAL GEDEB WOREDA & TOWN</p>
-<p>አንድ ወረዳ፣ አንድ ዲጂታል ማዕከል፣ ሁሉም አገልግሎቶች</p>
+  <div class="brand">
+    <div class="logo">DGWT</div>
+
+    <h1>ዲጂታል ገደብ ወረዳና ከተማ</h1>
+
+    <div class="english-title">
+      DIGITAL GEDEB WOREDA AND TOWN
+    </div>
+
+    <p class="tagline">
+      አንድ ወረዳ፣ አንድ ዲጂታል ማዕከል፣ ሁሉም አገልግሎቶች
+    </p>
+  </div>
 </header>
 
+<!-- NAVIGATION -->
+
 <nav>
-<a href="#home">መነሻ</a>
-<a href="#services">አገልግሎቶች</a>
-<a href="#report">ቅሬታ ማቅረቢያ</a>
-<a href="#about">ስለ ስርዓቱ</a>
+  <a href="#home">🏠 መነሻ</a>
+  <a href="#services">📋 አገልግሎቶች</a>
+  <a href="#steps">ℹ️ አጠቃቀም</a>
+  <a href="#report">📝 ቅሬታ</a>
+  <a href="#about">🏛️ ስለ እኛ</a>
 </nav>
 
+<!-- HERO -->
+
 <section class="hero" id="home">
-<h2>እንኳን ወደ ዲጂታል ገደብ በደህና መጡ!</h2>
-<p>የወረዳችንን አገልግሎቶች በአንድ የዲጂታል መድረክ ለማቅረብ፣ የሕዝብን ተሳትፎ ለማሳደግ፣ ግልጽነትንና ተጠያቂነትን ለማጠናከር የተዘጋጀ ስርዓት ነው።</p>
+  <div class="hero-content">
+
+    <h2>እንኳን ወደ DGWT በደህና መጡ!</h2>
+
+    <p>
+      የገደብ ወረዳና ከተማ አገልግሎቶችን
+      በአንድ ዘመናዊ ዲጂታል መድረክ
+      ለማቀናጀት የተዘጋጀ ፕሮጀክት።
+      ግልጽነት፣ ተጠያቂነት፣ ፍጥነትና
+      የዜጎች ተሳትፎ ዋና መርሆቻችን ናቸው።
+    </p>
+
+    <div class="hero-buttons">
+      <a class="btn btn-primary" href="#services">
+        አገልግሎቶችን ይመልከቱ
+      </a>
+
+      <a class="btn btn-outline" href="#report">
+        ቅሬታ ያቅርቡ
+      </a>
+    </div>
+
+  </div>
 </section>
 
 <main class="container">
-<h2 class="section-title" id="services">የዲጂታል አገልግሎቶች</h2>
 
-<div class="grid">
-<div class="service"><div class="icon">🏥</div><h3>ጤና አገልግሎት</h3><p>የጤና ተቋማትና አገልግሎቶች</p></div>
-<div class="service"><div class="icon">📚</div><h3>ትምህርት</h3><p>ትምህርት ቤቶችና የትምህርት ጉዳዮች</p></div>
-<div class="service"><div class="icon">🚔</div><h3>ደህንነት</h3><p>የደህንነት ጥቆማና ሪፖርት</p></div>
-<div class="service"><div class="icon">🏛️</div><h3>የመንግሥት አገልግሎት</h3><p>የአስተዳደር ጥያቄዎች</p></div>
-<div class="service"><div class="icon">🛒</div><h3>ገበያና ዋጋ</h3><p>የሸቀጦች ዋጋና የገበያ ቅሬታ</p></div>
-<div class="service"><div class="icon">🌱</div><h3>ግብርና</h3><p>የግብርና ድጋፍና ጥያቄ</p></div>
-<div class="service"><div class="icon">💧</div><h3>ውሃና ኤሌክትሪክ</h3><p>የመሠረተ ልማት ችግሮች</p></div>
-<div class="service"><div class="icon">🛣️</div><h3>መንገድና ግንባታ</h3><p>የመንገድና ግንባታ ጉዳዮች</p></div>
-<div class="service"><div class="icon">🌳</div><h3>አካባቢ ጥበቃ</h3><p>ንጽህናና አካባቢ ጥበቃ</p></div>
-<div class="service"><div class="icon">🏠</div><h3>መሬትና ቤት</h3><p>የመሬትና የቤት ጉዳዮች</p></div>
-<div class="service"><div class="icon">💼</div><h3>ሥራና ኢኮኖሚ</h3><p>የሥራ ዕድልና የኢኮኖሚ ድጋፍ</p></div>
-<div class="service"><div class="icon">🤝</div><h3>ማኅበራዊ ድጋፍ</h3><p>የማኅበራዊ ድጋፍ ጥያቄዎች</p></div>
-</div>
+<!-- STATISTICS -->
 
-<section class="card" id="report">
-<h2 class="section-title">የዜጎች ቅሬታና ጥቆማ ማቅረቢያ</h2>
-<div class="notice">ማሳሰቢያ፦ ይህ የመጀመሪያ ሙከራ ቅጽ ነው። እስካሁን መረጃውን ወደ መንግሥት ተቋም አይልክም። የግል መረጃ አታስገቡ።</div>
+<section class="stats" aria-label="የመድረኩ መረጃ">
 
-<form id="reportForm">
-<label>የጉዳዩ ዓይነት</label>
-<select required>
-<option value="">ይምረጡ</option>
-<option>የጤና አገልግሎት</option>
-<option>የትምህርት ጉዳይ</option>
-<option>የደህንነት ጥቆማ</option>
-<option>የገበያ ቅሬታ</option>
-<option>የውሃና ኤሌክትሪክ ችግር</option>
-<option>የመንገድ ችግር</option>
-<option>ሌላ</option>
-</select>
+  <div class="stat">
+    <strong>12</strong>
+    <span>ዋና የአገልግሎት ዘርፎች</span>
+  </div>
 
-<label>ቀበሌ</label>
-<select required>
-<option value="">ቀበሌ ይምረጡ</option>
-<option>ገደብ ባሬዳ</option>
-<option>ገደብ ሴሲሌ</option>
-<option>ገደብ ጉቤታ</option>
-<option>ባዴሳ</option>
-<option>ገሊቻ</option>
-<option>ባንኮ ቼሊቼሌ</option>
-<option>ባንኮ ጎቲት</option>
-<option>ባንኮ ታታቱ</option>
-<option>ሃሎ ባሪት</option>
-<option>ወሪካ ቼሊቤሳ</option>
-<option>ወሪካ ሳካሮ</option>
-</select>
+  <div class="stat">
+    <strong>DGWT</strong>
+    <span>አንድ ዲጂታል መድረክ</span>
+  </div>
 
-<label>የጉዳዩ መግለጫ</label>
-<textarea required placeholder="ጉዳዩን በግልጽ ይግለጹ..."></textarea>
+  <div class="stat">
+    <strong>24/7</strong>
+    <span>የመድረኩ የመረጃ መዳረሻ ዓላማ</span>
+  </div>
 
-<button type="submit">ቅጹን አስገባ</button>
-</form>
-<p id="message"></p>
 </section>
 
-<section class="card" id="about">
-<h2 class="section-title">ስለ ዲጂታል ገደብ</h2>
-<p style="line-height:2">ዲጂታል ገደብ ወረዳና ከተማ የወረዳውን አገልግሎቶች በዘመናዊ የቴክኖሎጂ መንገድ ለማቀናጀት የተነደፈ የዲጂታል ልማት ፕሮጀክት ነው። ዓላማው የዜጎችን ተሳትፎ፣ የአገልግሎት ፍጥነት፣ ግልጽነትና ተጠያቂነት ማሳደግ ነው።</p>
+<!-- SERVICES -->
+
+<section class="section" id="services">
+
+  <div class="section-heading">
+    <h2>የዲጂታል አገልግሎቶች</h2>
+    <div class="section-line"></div>
+    <p>12ቱን ዋና የአገልግሎት ዘርፎች እዚህ ያገኛሉ።</p>
+  </div>
+
+  <div class="search-box">
+    <input
+      type="search"
+      id="serviceSearch"
+      placeholder="🔍 አገልግሎት በስም ይፈልጉ..."
+      aria-label="አገልግሎት ፈልግ"
+    >
+  </div>
+
+  <div class="grid" id="serviceGrid">
+
+    <!-- 1 HEALTH -->
+
+    <article class="service" data-search="ጤና አገልግሎት health hospital clinic">
+      <div class="service-icon">🏥</div>
+      <h3>ጤና አገልግሎት</h3>
+      <p>የጤና ተቋማትና የጤና መረጃዎች።</p>
+      <details>
+        <summary>ዝርዝር ይመልከቱ</summary>
+        <ul>
+          <li>የጤና ጣቢያዎች መረጃ</li>
+          <li>የሆስፒታሎች መረጃ</li>
+          <li>የጤና ትምህርት</li>
+          <li>የጤና አገልግሎት ቅሬታ</li>
+        </ul>
+      </details>
+    </article>
+
+    <!-- 2 EDUCATION -->
+
+    <article class="service" data-search="ትምህርት education school">
+      <div class="service-icon">📚</div>
+      <h3>ትምህርት</h3>
+      <p>ትምህርት ቤቶችና የትምህርት ጉዳዮች።</p>
+      <details>
+        <summary>ዝርዝር ይመልከቱ</summary>
+        <ul>
+          <li>የትምህርት ቤቶች መረጃ</li>
+          <li>የትምህርት አገልግሎት</li>
+          <li>የትምህርት ቅሬታዎች</li>
+          <li>የትምህርት ማስታወቂያዎች</li>
+        </ul>
+      </details>
+    </article>
+
+    <!-- 3 SECURITY -->
+
+    <article class="service" data-search="ደህንነት security police">
+      <div class="service-icon">🚔</div>
+      <h3>ደህንነት</h3>
+      <p>የደህንነት ጥቆማና ሪፖርት።</p>
+      <details>
+        <summary>ዝርዝር ይመልከቱ</summary>
+        <ul>
+          <li>የደህንነት ጥቆማ</li>
+          <li>የማኅበረሰብ ጥበቃ</li>
+          <li>የሰላም መረጃ</li>
+          <li>የችግር ሪፖርት</li>
+        </ul>
+      </details>
+    </article>
+
+    <!-- 4 GOVERNMENT -->
+
+    <article class="service" data-search="መንግሥት አገልግሎት government office">
+      <div class="service-icon">🏛️</div>
+      <h3>የመንግሥት አገልግሎት</h3>
+      <p>የአስተዳደር ጥያቄዎችና መረጃዎች።</p>
+      <details>
+        <summary>ዝርዝር ይመልከቱ</summary>
+        <ul>
+          <li>የመንግሥት ቢሮዎች መረጃ</li>
+          <li>የአስተዳደር ማመልከቻዎች</li>
+          <li>የሥራ ሂደቶች</li>
+          <li>የሕዝብ ጥያቄዎች</li>
+        </ul>
+      </details>
+    </article>
+
+    <!-- 5 MARKET -->
+
+    <article class="service" data-search="ገበያ ዋጋ market price">
+      <div class="service-icon">🛒</div>
+      <h3>ገበያና ዋጋ</h3>
+      <p>የሸቀጦች ዋጋና የገበያ ቅሬታ።</p>
+      <details>
+        <summary>ዝርዝር ይመልከቱ</summary>
+        <ul>
+          <li>የሸቀጦች ዋጋ መረጃ</li>
+          <li>የገበያ ቁጥጥር ጥቆማ</li>
+          <li>የንግድ መረጃ</li>
+          <li>የዋጋ ቅሬታ</li>
+        </ul>
+      </details>
+    </article>
+
+    <!-- 6 AGRICULTURE -->
+
+    <article class="service" data-search="ግብርና agriculture farming">
+      <div class="service-icon">🌱</div>
+      <h3>ግብርና</h3>
+      <p>የግብርና ድጋፍና ጥያቄዎች።</p>
+      <details>
+        <summary>ዝርዝር ይመልከቱ</summary>
+        <ul>
+          <li>የግብርና ባለሙያ መረጃ</li>
+          <li>የሰብል ምርት መረጃ</li>
+          <li>የእንስሳት ሀብት</li>
+          <li>የግብርና ግብዓት ጥያቄ</li>
+        </ul>
+      </details>
+    </article>
+
+    <!-- 7 WATER AND ELECTRICITY -->
+
+    <article class="service" data-search="ውሃ ኤሌክትሪክ water electricity">
+      <div class="service-icon">💧</div>
+      <h3>ውሃና ኤሌክትሪክ</h3>
+      <p>የመሠረተ ልማት ችግሮች።</p>
+      <details>
+        <summary>ዝርዝር ይመልከቱ</summary>
+        <ul>
+          <li>የውሃ አቅርቦት ችግር</li>
+          <li>የኤሌክትሪክ ችግር</li>
+          <li>የጥገና ጥያቄ</li>
+          <li>የአገልግሎት ቅሬታ</li>
+        </ul>
+      </details>
+    </article>
+
+    <!-- 8 ROAD -->
+
+    <article class="service" data-search="መንገድ ግንባታ road construction">
+      <div class="service-icon">🛣️</div>
+      <h3>መንገድና ግንባታ</h3>
+      <p>የመንገድና የግንባታ ጉዳዮች።</p>
+      <details>
+        <summary>ዝርዝር ይመልከቱ</summary>
+        <ul>
+          <li>የመንገድ ጥገና ጥያቄ</li>
+          <li>የግንባታ መረጃ</li>
+          <li>የመንገድ ችግር ሪፖርት</li>
+          <li>የልማት ፕሮጀክቶች</li>
+        </ul>
+      </details>
+    </article>
+
+    <!-- 9 ENVIRONMENT -->
+
+    <article class="service" data-search="አካባቢ ጥበቃ environment">
+      <div class="service-icon">🌳</div>
+      <h3>አካባቢ ጥበቃ</h3>
+      <p>ንጽህናና አካባቢ ጥበቃ።</p>
+      <details>
+        <summary>ዝርዝር ይመልከቱ</summary>
+        <ul>
+          <li>የአካባቢ ንጽህና</li>
+          <li>የቆሻሻ አወጋገድ</li>
+          <li>የደን ጥበቃ</li>
+          <li>የአካባቢ ጥቆማ</li>
+        </ul>
+      </details>
+    </article>
+
+    <!-- 10 LAND -->
+
+    <article class="service" data-search="መሬት ቤት land housing">
+      <div class="service-icon">🏠</div>
+      <h3>መሬትና ቤት</h3>
+      <p>የመሬትና የቤት ጉዳዮች።</p>
+      <details>
+        <summary>ዝርዝር ይመልከቱ</summary>
+        <ul>
+          <li>የመሬት መረጃ</li>
+          <li>የቤት ጉዳዮች</li>
+          <li>የመሬት አስተዳደር</li>
+          <li>የመሬት ቅሬታ</li>
+        </ul>
+      </details>
+    </article>
+
+    <!-- 11 EMPLOYMENT -->
+
+    <article class="service" data-search="ሥራ ኢኮኖሚ employment economy">
+      <div class="service-icon">💼</div>
+      <h3>ሥራና ኢኮኖሚ</h3>
+      <p>የሥራ ዕድልና የኢኮኖሚ ድጋፍ።</p>
+      <details>
+        <summary>ዝርዝር ይመልከቱ</summary>
+        <ul>
+          <li>የሥራ ዕድል መረጃ</li>
+          <li>የሥራ ፈጠራ ድጋፍ</li>
+          <li>የወጣቶች ኢኮኖሚ</li>
+          <li>የሥራ ማስታወቂያ</li>
+        </ul>
+      </details>
+    </article>
+
+    <!-- 12 SOCIAL SUPPORT -->
+
+    <article class="service" data-search="ማኅበራዊ ድጋፍ social support">
+      <div class="service-icon">🤝</div>
+      <h3>ማኅበራዊ ድጋፍ</h3>
+      <p>የማኅበራዊ ድጋፍ ጥያቄዎች።</p>
+      <details>
+        <summary>ዝርዝር ይመልከቱ</summary>
+        <ul>
+          <li>የማኅበራዊ ድጋፍ መረጃ</li>
+          <li>የአካል ጉዳተኞች ድጋፍ</li>
+          <li>የሴቶችና ሕፃናት ጉዳይ</li>
+          <li>የማኅበረሰብ ድጋፍ</li>
+        </ul>
+      </details>
+    </article>
+
+  </div>
+
+  <div class="empty-message" id="emptyMessage">
+    የፈለጉት አገልግሎት አልተገኘም።
+    ሌላ ቃል ይሞክሩ።
+  </div>
+
 </section>
+
+<!-- HOW IT WORKS -->
+
+<section class="section" id="steps">
+
+  <div class="section-heading">
+    <h2>መድረኩን እንዴት መጠቀም ይቻላል?</h2>
+    <div class="section-line"></div>
+    <p>በሶስት ቀላል ደረጃዎች።</p>
+  </div>
+
+  <div class="steps">
+
+    <div class="step">
+      <div class="step-number">1</div>
+      <h3>አገልግሎት ይምረጡ</h3>
+      <p>የሚፈልጉትን የአገልግሎት ዘርፍ ይለዩ።</p>
+    </div>
+
+    <div class="step">
+      <div class="step-number">2</div>
+      <h3>መረጃ ያግኙ</h3>
+      <p>የአገልግሎቱን ዝርዝርና መመሪያ ይመልከቱ።</p>
+    </div>
+
+    <div class="step">
+      <div class="step-number">3</div>
+      <h3>ጥያቄ ያቅርቡ</h3>
+      <p>በተዘጋጀው ቅጽ ጥያቄዎን ወይም ቅሬታዎን ያቅርቡ።</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CITIZEN REPORT -->
+
+<section class="section" id="report">
+
+  <div class="section-heading">
+    <h2>የዜጎች ቅሬታና ጥቆማ ማቅረቢያ</h2>
+    <div class="section-line"></div>
+    <p>የማኅበረሰቡ ድምፅ ለልማትና ለመልካም አስተዳደር።</p>
+  </div>
+
+  <div class="card">
+
+    <div class="notice">
+      ማሳሰቢያ፦ ይህ የሙከራ ቅጽ ነው።
+      የግል መረጃዎን፣ የይለፍ ቃልዎን
+      ወይም ሌሎች ሚስጥራዊ መረጃዎችን
+      አያስገቡ። ቅጹ ገና ወደ ተቋም አይልክም።
+    </div>
+
+    <form id="reportForm">
+
+      <label for="reportType">የጉዳዩ ዓይነት</label>
+
+      <select id="reportType" required>
+        <option value="">ይምረጡ</option>
+        <option>የጤና አገልግሎት</option>
+        <option>የትምህርት ጉዳይ</option>
+        <option>የደህንነት ጥቆማ</option>
+        <option>የመንግሥት አገልግሎት</option>
+        <option>የገበያ ቅሬታ</option>
+        <option>የግብርና ጉዳይ</option>
+        <option>የውሃና ኤሌክትሪክ ችግር</option>
+        <option>የመንገድ ችግር</option>
+        <option>የአካባቢ ጥበቃ</option>
+        <option>የመሬትና ቤት ጉዳይ</option>
+        <option>የሥራና ኢኮኖሚ ጉዳይ</option>
+        <option>ማኅበራዊ ድጋፍ</option>
+        <option>ሌላ</option>
+      </select>
+
+      <label for="kebele">ቀበሌ</label>
+
+      <select id="kebele" required>
+        <option value="">ቀበሌ ይምረጡ</option>
+        <option>ገደብ ባሬዳ</option>
+        <option>ገደብ ሴሲሌ</option>
+        <option>ገደብ ጉቤታ</option>
+        <option>ባዴሳ</option>
+        <option>ገሊቻ</option>
+        <option>ባንኮ ቼሊቼሌ</option>
+        <option>ባንኮ ጎቲት</option>
+        <option>ባንኮ ታታቱ</option>
+        <option>ሃሎ ባሪት</option>
+        <option>ወሪካ ቼሊቤሳ</option>
+        <option>ወሪካ ሳካሮ</option>
+      </select>
+
+      <label for="description">የጉዳዩ መግለጫ</label>
+
+      <textarea
+        id="description"
+        required
+        maxlength="1000"
+        placeholder="ጉዳዩን በግልጽ ይግለጹ..."
+      ></textarea>
+
+      <button type="submit" class="submit-btn">
+        ቅጹን አስገባ
+      </button>
+
+    </form>
+
+    <div id="message" aria-live="polite"></div>
+
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="section" id="about">
+
+  <div class="section-heading">
+    <h2>ስለ DIGITAL GEDEB WOREDA AND TOWN</h2>
+    <div class="section-line"></div>
+    <p>ለዘመናዊ አስተዳደርና ለዲጂታል ልማት።</p>
+  </div>
+
+  <div class="about-grid">
+
+    <div class="about-item">
+      <div class="icon">🎯</div>
+      <h3>ራዕይ</h3>
+      <p>
+        በቴክኖሎጂ የተደገፈ፣
+        ግልጽና ተጠያቂ የሆነ
+        የወረዳና ከተማ አስተዳደር
+        ማጠናከር።
+      </p>
+    </div>
+
+    <div class="about-item">
+      <div class="icon">🚀</div>
+      <h3>ተልዕኮ</h3>
+      <p>
+        የወረዳውን አገልግሎቶች
+        በአንድ ዲጂታል መድረክ
+        በማቀናጀት የዜጎችን
+        ተሳትፎ ማሳደግ።
+      </p>
+    </div>
+
+    <div class="about-item">
+      <div class="icon">🤝</div>
+      <h3>ዋና እሴቶች</h3>
+      <p>
+        ግልጽነት፣ ተጠያቂነት፣
+        ተሳትፎ፣ ፍትሃዊነት፣
+        ፈጠራና የአገልግሎት ጥራት።
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
 </main>
 
 <footer>
-<strong>DGWT</strong><br>
-ዲጂታል ገደብ ወረዳና ከተማ<br>
-አንድ ወረዳ፣ አንድ ዲጂታል ማዕከል፣ ሁሉም አገልግሎቶች
+
+  <div class="footer-logo">DGWT</div>
+
+  <h3>ዲጂታል ገደብ ወረዳና ከተማ</h3>
+
+  <p>DIGITAL GEDEB WOREDA AND TOWN</p>
+
+  <p>
+    አንድ ወረዳ፣ አንድ ዲጂታል ማዕከል፣
+    ሁሉም አገልግሎቶች
+  </p>
+
+  <div class="footer-bottom">
+    DGWT Digital Platform |
+    © <span id="year"></span>
+    ሁሉም መብቶች የተጠበቁ ናቸው።
+  </div>
+
 </footer>
 
 <script>
-document.getElementById("reportForm").addEventListener("submit",function(e){
-e.preventDefault();
-document.getElementById("message").textContent="ይህ የሙከራ ቅጽ ነው። መረጃው አልተላከም።";
+
+// SERVICE SEARCH
+
+const searchInput = document.getElementById("serviceSearch");
+const serviceCards = document.querySelectorAll(".service");
+const emptyMessage = document.getElementById("emptyMessage");
+
+searchInput.addEventListener("input", function(){
+
+  const searchValue = this.value.trim().toLowerCase();
+  let visibleCount = 0;
+
+  serviceCards.forEach(function(card){
+
+    const searchText =
+      card.innerText + " " + card.dataset.search;
+
+    const matches =
+      searchText.toLowerCase().includes(searchValue);
+
+    card.style.display = matches ? "" : "none";
+
+    if(matches) visibleCount++;
+
+  });
+
+  emptyMessage.style.display =
+    visibleCount === 0 ? "block" : "none";
+
 });
+
+// DEMO REPORT FORM
+
+document.getElementById("reportForm")
+.addEventListener("submit", function(e){
+
+  e.preventDefault();
+
+  const message = document.getElementById("message");
+
+  message.className = "message-success";
+
+  message.textContent =
+    "የሙከራ ቅጽ በትክክል ተሞልቷል። " +
+    "ነገር ግን ወደ ማንኛውም ተቋም አልተላከም። " +
+    "የመረጃ ማስቀመጫ ስርዓት ከተገናኘ በኋላ " +
+    "እውነተኛ ማስገባት ይቻላል።";
+
+});
+
+// AUTOMATIC YEAR
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
 </script>
+
 </body>
 </html>
